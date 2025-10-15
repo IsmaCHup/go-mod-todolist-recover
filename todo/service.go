@@ -30,17 +30,19 @@ func CompleteTodo(id int) bool{
 	for i, comp := range todos{
 		if comp.id == id{
 			todos[i].complete = true
+			return true
 		}
 	}
-	return true
+	return false
 }
 
 func DeleteTodo(id int) bool{
 	for i, delTodo := range todos{
 		if delTodo.id == id{
 			todos = append(todos[:i], todos[i+1:]...)
+			return true
 		}
 	}
-	return true
+	return false
 }
 
